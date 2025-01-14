@@ -1,0 +1,89 @@
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #373434;
+}
+
+#intro-screen {
+    background-image: url('images/background.png');
+    background-repeat: repeat-y;
+    background-size: 900px auto;
+    background-position: center;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    box-sizing: border-box;
+    padding-top: 50px;  
+    padding-bottom: 50px; 
+}
+
+h2, h1, p {
+    text-align: center; /* Keskittää tekstin vaakasuunnassa */
+    width: 100%;   /* Tekee elementeistä täysleveän */
+    position: relative;
+    margin: 20px 0; /* Lisää hieman marginaalia ylä- ja alapuolelle */
+    }
+
+h3 { 
+    margin: 10px 10px;
+    }
+
+button {
+        background-color: black;
+        color: white;
+        margin-left: 20px; /* Sama sisennys kuin monsterin kuvilla */
+        align-self: flex-start; /* Asetetaan nappula vasempaan reunaan */
+        padding: 20px 20px;
+        font-size: 16px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    #game-screen {
+        display: none;
+    }
+
+   
+
+        #game-board {
+            display: grid;
+            gap: 0px;
+            background-image: url('images/background.png');
+            background-size: cover;
+            background-position: center;
+            width: 50vw; 
+            height: 50vw; 
+            margin: 10px auto;
+            border: 2px solid #333;
+            padding: 0px;
+            background-color: rgba(221, 221, 221, 0.8);
+            } 
+
+.cell {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+            
+.wall {
+        background-image: url('images/wall.png');
+        width: 50px;
+        height: 50px;
+        background-size: cover;
+    }
