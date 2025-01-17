@@ -87,3 +87,8 @@ button {
         height: 50px;
         background-size: cover;
     }
+    
+    .player {
+         background-image: url('images/player.png');
+        background-size: cover;
+        }
