@@ -87,8 +87,30 @@ button {
         height: 50px;
         background-size: cover;
     }
+
+.player {
+        background-image: url('images/player.png');
+    background-size: cover;
+    }
+
+.hornmonster {
+    background-image: url('images/hornmonster.png');
+    background-size: cover;
+    }
+
+.bullet {
+    background-color: red;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    animation: fadeOut 0.5s ease-out;
+}
     
-    .player {
-         background-image: url('images/player.png');
-        background-size: cover;
-        }
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
