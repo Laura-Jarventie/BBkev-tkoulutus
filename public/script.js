@@ -28,11 +28,12 @@ document.addEventListener('keydown', (event) => {
    break;
    case 'ArrowLeft':
    player.move(-1, 0); // Liikuta vasemmalle
-  break;
+   break;
    case 'ArrowRight':
    player.move(1, 0); // Liikuta oikealle
    break;
-   case 'w':
+
+  case 'w':
   shootAt(player.x, player.y - 1); // shoot up
   break;
   case 's':
@@ -81,7 +82,7 @@ function startGame(){
     // Generate board and draw it
     board = generateRandomBoard();
 
-    //Haamut alkavat liikkumaan kolmen sekunnin päästä startin painamisesta
+    //Haamut alkavat liikkumaan sekunnin päästä startin painamisesta
     setTimeout(() => {
       //Laitetaan haamut liikkumaan sekunnin välein
       ghostInterval = setInterval(moveGhosts, ghostSpeed)
@@ -298,10 +299,7 @@ function randomEmptyPosition(board) {
         }
         // Jos kaikki pelaajaan päin suunnat ovat esteitä, pysy paikallaan
         return { x: this.x, y: this.y };
-    }
-
-        
-    
+    } 
 }
 
 function shootAt(x, y) {
@@ -320,35 +318,23 @@ function shootAt(x, y) {
   }
  // console.log(ghosts);
 
-  
-  
-
   setCell(board, x, y, 'B');
 
- 
-
   drawBoard(board);
-
-  if (ghosts.length === 0){
-     
+  if (ghosts.length === 0){ 
     startNextLevel();
   }
+
 }
 
 function moveGhosts() {
-  
- 
 
 // Säilytä haamujen vanhat paikat
 const oldGhosts = ghosts.map(ghost => ({ x: ghost.x, y: ghost.y }));
 
-  /* // Clear old ghost positions from the board
-  ghosts.forEach(ghost => {    
-  board[ghost.y][ghost.x] = ' '; // Clear old ghost position
-  }); */
-
   ghosts.forEach(ghost => {
-      const newPosition = ghost.moveGhostTowardsPlayer(player, board, oldGhosts);
+    
+    const newPosition = ghost.moveGhostTowardsPlayer(player, board, oldGhosts);
       
       ghost.x = newPosition.x;
       ghost.y = newPosition.y;
@@ -360,6 +346,7 @@ const oldGhosts = ghosts.map(ghost => ({ x: ghost.x, y: ghost.y }));
           endGame() // End the game
       return;
       }
+
       });
 
     // Tyhjennä vanhat haamujen paikat laudalta
@@ -397,11 +384,11 @@ function startNextLevel() {
 
   // Pysäytä vanha intervalli ja käynnistä uusi nopeammin
   clearInterval(ghostInterval);
-  
-   //Haamut alkavat liikkumaan kolmen sekunnin päästä startin painamisesta
+
+   //Haamut alkavat liikkumaan sekunnin päästä startin painamisesta
    setTimeout(() => {
     //Laitetaan haamut liikkumaan sekunnin välein
     ghostInterval = setInterval(moveGhosts, ghostSpeed)
-  }, 1000);
+    }, 1000);
   
 }
